@@ -14,7 +14,7 @@ pipeline {
 
         stage('CODE CHECKOUT') {
             steps {
-                git 'https://github.com/ShubhamBhurse/project-2.git'
+                git 'https://github.com/ShubhamBhurse/p1.git'
             }
         }
         
