@@ -2,8 +2,8 @@
 
 ## Description
 
-This project is a Java-based web application that demonstrates the Deployment of a web application Deployed on an Kubernetes Cluster(Self managed on AWS Cloud).
-In This Project we have used Jenkins Tool to automate the process of Building and Deployment, also Ansible Tool for Configuration Management Purpose.
+This project is a Java-based web application that demonstrates the Deployment of a web application Deployed on Kubernetes Cluster(Self managed on AWS Cloud).
+In This Project we have used Jenkins Tool to automate the process of Building and Deployment. Also Ansible Tool for Configuration Management Purpose.
 
 
 
@@ -36,20 +36,20 @@ https://github.com/ShubhamBhurse/project-2/assets/130531451/a9cafcfc-c7d8-484c-9
 ## Installation
 
 1. Jenkins and Ansible and Maven
-Installations done on same Server
+Installations done on the same Server
 
 [Click here](https://github.com/ShubhamBhurse/Installations/blob/main/jenkins_ansible_installation_p1.md)
 
 2. SonarQube
 
 
-Sonarqube is install on EC2 (Ubuntu) Instance.
+Sonarqube is installed on EC2 (Ubuntu) Instance.
 
 [Click here](https://github.com/ShubhamBhurse/Installations/blob/main/sonarqube_installation_p1.md)
 
 3. Kubernetes Cluster
 
-To Deploy application we have used Kubernetes Cluster(Self managed) On AWS Cloud.
+To deploy an Application we have used Kubernetes Cluster(Self managed) On AWS Cloud.
 
 [Click here](https://github.com/ShubhamBhurse/Installations/blob/main/kubernetes_installation_p1.md)
 
@@ -76,38 +76,38 @@ This project includes automated building and deployment using Jenkins CI/CD pipe
 
 Stages Involves in pipeline
 
-1. CLEAN WORKSPACE:
+1. Clean Workspace:
    
 This stage involve cleaning up any remnants from previous builds or deployments in the Jenkins workspace. It ensures that you're starting with a clean slate before proceeding with the pipeline.
 
-2. CODE CHECKOUT:
+2. Code Checkout:
    
 In this stage, the pipeline typically checks out the source code from your version control system (GitHub) so that you have the latest codebase to work with.
 
-3. MODIFIED IMAGE TAG:
+3. Modified Image Tag:
    
 This stage involve dynamically generating or modifying the image tag used for Docker images. based on the job name and also it uses Jenkins ENVIRONMENT variable, This will be done by  Cofiguration Managment Tool(Ansible).
 
-4. BUILD:
+4. Build:
 
-The build stage compiles our code and creates any necessary artifacts(Packages). As our project is Java based web application it compiles the code and creating WAR files.
+The build stage compiles our code and creates any necessary artifacts(Packages). As our project is Java based web application it compiles the code and create WAR files.
 
-5. SONAR SCANNER:
+5. Sonar Scanner:
 
-This stage runs the SonarQube scanner as part of the pipeline to analyze the quality of your code and identify any issues or code quality violations.
+This stage runs the SonarQube scanner as a part of the pipeline to analyze the quality of your code and to identify any issues or code quality violations.
 
-6. COPY JAR & Dockerfile:
+6. Copy WAR & Dockerfile:
 
 In this stage, we are copying  the WAR file and Dockerfile from Build Context into a Kubernetes Cluster where the Docker image will be built. The Dockerfile contains instructions for building the Docker image with our Application Code(WAR file).
 This stage is executed with Ansible.
 
-7. PUSH IMAGE on DockerHub:
+7. Push Image on DockerHub:
 
-This stage involves pushing the Docker image, which contains your application, to a container registry(Docker Hub). This makes the image accessible for deployment on other environments or by other team members.
+This stage involves pushing the Docker image which contains our application to a container registry(Docker Hub). This makes the image accessible for deployment on other environments or to the other team members.
 
-8. Deployment on EKS:
+8. Deployment on Kubernetes Cluster:
 
-This stage is responsible for deploying our application on an Sekf managed Kubernetes Cluster. It includes configuring the deployment, scaling, and managing the application within the Kubernetes environment.
+This stage is responsible for deploying our application on an Self managed Kubernetes Cluster. It includes configuring the deployment, scaling, and managing the application within the Kubernetes environment.
 
 ## Contact Information
 
