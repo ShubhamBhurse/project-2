@@ -35,7 +35,7 @@ https://github.com/ShubhamBhurse/project-2/assets/130531451/a9cafcfc-c7d8-484c-9
 
 ## Installation
 
-1. Jenkins and Ansible and Maven
+1. Jenkins, Ansible and Maven
 Installations done on the same Server
 
 [Click here](https://github.com/ShubhamBhurse/Installations/blob/main/jenkins_ansible_installation_p1.md)
